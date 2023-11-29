@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo App</title>
+</head>
+<body>
+    <h1>Photo App</h1>
+
+    <form action="http://127.0.0.1:5000/upload_photo" method="post" enctype="multipart/form-data">
+        <label for="file">Select a photo:</label>
+        <input type="file" name="file" id="file" accept="image/*">
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+
+    <hr>
+    <form action="/random_photo" method="get">
+        <button type="submit">Random Photo</button>
+    </form>
+
+</body>
+</html>

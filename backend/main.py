@@ -1,15 +1,24 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
-from backend import routers
-from backend.config import settings
-import uvicorn
+# main.py
+from flask import Flask, request
+from utils import get_random_photo, upload_photo, get_frontend_path
 
-app = FastAPI()
+app = Flask(__name__)
 
-if len(settings.CORS_ORIGINS) > 0:
-    app.add_middleware(CORSMiddleware, allow_origins=['*'], allow_credentials=True,
-                       allow_methods=['*'], allow_headers=['*'])
-routers.init_app(app)
+
+@app.route('/random_photo', methods=['GET'])
+def random_photo():
+    return get_random_photo()
+
+
+@app.route('/upload_photo', methods=['POST'])
+def upload():
+    return upload_photo(request)
+
+
+@app.route('/', methods=['GET'])
+def upload_page():
+    return get_frontend_path('index.html')
+
 
 if __name__ == '__main__':
-    uvicorn.run('main:app', host='127.0.0.1', port=settings.PORT, reload=True)
+    app.run(debug=True)
