@@ -3,7 +3,7 @@ from PIL import Image
 from io import BytesIO
 import os
 import requests
-from cfg import Config
+from config import Config
 def get_random_photo():
     unsplash_api_url = 'https://api.unsplash.com/photos/random'
     headers = {'Authorization': f'Client-ID {Config.UNSPLASH_ACCESS_KEY}'}
