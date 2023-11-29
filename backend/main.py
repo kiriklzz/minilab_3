@@ -1,4 +1,3 @@
-# main.py
 from flask import Flask, request
 from utils import get_random_photo, upload_photo, get_frontend_path
 

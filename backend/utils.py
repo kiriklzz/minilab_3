@@ -1,4 +1,3 @@
-# utils.py
 from flask import jsonify, send_file, send_from_directory
 from PIL import Image
 from io import BytesIO
