@@ -39,7 +39,7 @@ Briefly describe your application and its functionality.
         source venv/bin/activate
         ```
 
-3. Create a `.env/.py` file in the project root and add your configuration variables:
+3. Create a `.env/.py` file in the project root and add your configuration variables [site here](https://unsplash.com/):
 
     ```env
     UNSPLASH_ACCESS_KEY=your_unsplash_access_key
